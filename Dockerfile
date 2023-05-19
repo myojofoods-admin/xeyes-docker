@@ -10,11 +10,11 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
-RUN useradd -m --uid ${DOCKER_UID} 
+RUN useradd -m --uid ${DOCKER_UID} ${DOCKER_USER}
 USER ${DOCKER_USER}
 
 ENV HOME=/home/${DOCKER_USER}
 ENV SHELL=/bin/bash
 WORKDIR ${HOME}
 
-CMD ["/bin/bash"]
+CMD ["xeyes"]
